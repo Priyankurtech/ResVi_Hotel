@@ -1,0 +1,43 @@
+package org.jsp.resvi.dto;
+
+import java.time.LocalDate;
+
+import org.springframework.stereotype.Component;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.Data;
+
+@Entity
+@Data
+@Component
+public class CustomerDto {
+	 @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private int id;
+	    @Size(min = 5, message = "*Enter Words between 5 to 20")
+	    private String name;
+	    @Email(message = "*Enter proper email Id")
+	    @NotEmpty(message = "*This field should not be empty")
+	    private String email;
+	    @DecimalMin(value = "6000000000")
+	    @DecimalMax(value = "9999999999", message = "Enter The Phone No")
+	    private long mobile;
+	    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$")
+	    private String password;
+	    private boolean status;
+	    private int otp;
+	
+
+}
