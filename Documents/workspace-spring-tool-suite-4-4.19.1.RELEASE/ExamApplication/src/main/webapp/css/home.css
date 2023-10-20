@@ -1,0 +1,47 @@
+@charset "ISO-8859-1";
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #000; /* black background color */
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav button {
+            background-color: #fff; /* white background color */
+            color: #000; /* black text color */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+       
+
+        nav button:hover {
+            background-color: rgb(0, 128, 192);
+            color: #fff;
+        }
+
+        /* Stylish button effects */
+        nav button:active {
+            transform: translateY(2px);
+        }
+
+        nav button:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
